@@ -21,7 +21,9 @@ We use virtual environments to have a lightweight and isolated environment for p
 **3.Explain how did you implement the steps on point 1 to point 4 above**
 1. Copying template repository https://github.com/pbp-fasilkom-ui/assignment-repository and clone it to local repository
 2. Implement view.py function that stores the data from models, context dictionary, and returns render function that combines katalog.html and the given context dictionary
-3. Implement urls.py to create the routing to the views function and register 
+3. Implement urls.py to create the routing to the views function and register the app in another urls.py located project_django folder
+4. change the fill me! in katalog.html to {{name}} and {{student_id}} respectively also adding code to iterate list_item
+5. 
 
 
 
