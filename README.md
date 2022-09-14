@@ -23,7 +23,9 @@ We use virtual environments to have a lightweight and isolated environment for p
 2. Implement view.py function that stores the data from models, context dictionary, and returns render function that combines katalog.html and the given context dictionary
 3. Implement urls.py to create the routing to the views function and register the app in another urls.py located project_django folder
 4. change the fill me! in katalog.html to {{name}} and {{student_id}} respectively also adding code to iterate list_item
-5. 
+5. push changes to github 
+6. create new heroku application and copy-paste the HEROKU_API_KEY and HEROKU_APP_NAME to the repository secret
+7. rerun the failed workflow and the application will be deployed in heroku
 
 
 
