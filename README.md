@@ -15,5 +15,15 @@ Flow of diagram:
 
 **2. Explain why do we use virtual environments? Let's say, if we do not use the virtual environments, can we still create a Django web application?**
 
+We use virtual environments to have a lightweight and isolated environment for packages and versions so that it does not "pollute" your main package directory and vice versa. Although you can create a django web application without virtual environments it is not recommended because it may create environment issues between your production environment and other environment that is hard to fix.
+
+
+**3.Explain how did you implement the steps on point 1 to point 4 above**
+1. Copying template repository https://github.com/pbp-fasilkom-ui/assignment-repository and clone it to local repository
+2. Implement view.py function that stores the data from models, context dictionary, and returns render function that combines katalog.html and the given context dictionary
+3. Implement urls.py to create the routing to the views function and register 
+
+
+
 
 
