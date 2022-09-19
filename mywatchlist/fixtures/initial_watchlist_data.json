@@ -1,0 +1,120 @@
+[
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 1,
+        "fields": {
+            "watched": "✅ ",
+            "title": "Pengabdi Setan 2 : Communion",
+            "rating": 4,
+            "release_date": "August 4, 2022",
+            "review": " It's surprising! And shocking! Which means good. The cinematography was so epic but slowly the excitement table turned. The appearance of the ghosts sometimes felt wrong and too much, so it felt like a 'ghost show' for me.The climax part was the anticlimax for me. There were repetitive flashing lights and eerie sounds that ended up distracting and triggering photosensitivity. This movie also had alot of fuzzy moves from the camera that maybe annoying. Flash warning is really needed to be given."
+        }
+    },
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 2,
+        "fields": {
+            "watched": "✅ ",
+            "title": "Dr Strange in the Multiverse of Madness",
+            "rating": 3,
+            "release_date": "May 5, 2022",
+            "review": " There are plenty of enjoyable moments and some unexpected cameos which u may or may not like , there are instances when you will se Marvel trying to appear as sociologically progressive but it looks good only when it's being messaged subtly , when it's shown as in your face , it may send wrong signals. "
+        }
+    }, 
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 3,
+        "fields": {
+            "watched": "✅ ",
+            "title": "Rogue One: A Star Wars Story",
+            "rating": 5,
+            "release_date": "December 14, 2016",
+            "review": " one of the best Star Wars movie and also my number one favorite Star Wars film made by Disney! Like my number one favorite scene is definitely hands down all Darth Vader scene especially hallway scene when he fights the Rebels."
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 4,
+        "fields": {
+            "watched": "✅ ",
+            "title": "Star Wars: The Rise of Skywalker",
+            "rating": 2,
+            "release_date": "December 18, 2019",
+            "review": " It’s not a good movie. The pace doesn’t allow anything to sink in and be processed, and therefore ignores any nuances to story telling and caring about characters. They managed to eliminate any character development from the last movies by whisking them through a non stop Michael Bay explosion scene for 3 hours."
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 5,
+        "fields": {
+            "watched": "✅ ",
+            "title": "Narcos: Mexico",
+            "rating": 4,
+            "release_date": "August 4, 2022",
+            "review": "The series is good, albeit a tad slow. In the 1st season, there is mention of Kiki & you know the fate of the DEA agent in this season, Not a happy ending, as told in the first episode in the new season. "
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 6,
+        "fields": {
+            "watched": "✅ ",
+            "title": "First they killed my father",
+            "rating": 5,
+            "release_date": "September 15, 2017",
+            "review": " Each scene is powerful in masterful HD cinematography. With a gripping storyline based on actual events as retold by the lead protagonist from her memoir titled A Daughter of Cambodia Remembers. This is a great history reference for those unaware of Southeast Asian nation Cambodia and its disconsolate past."
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 7,
+        "fields": {
+            "watched": "✅ ",
+            "title": "The Ritual",
+            "rating": 2,
+            "release_date": "October 13, 2017",
+            "review": " The only deep meaning I can gather is that maybe The Ritual is the lack of support and intimacy men give to each other that is generationally passed down, but that's too generous I think. Hardly a good jump scare, hardly a thrilling plot."
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 8,
+        "fields": {
+            "watched": "✅ ",
+            "title": "Soul",
+            "rating": 5,
+            "release_date": "October 11, 2020",
+            "review": " I can say this without hesitation: Disney/Pixar's Soul is my favorite movie of 2020. Brilliantly animated, funny, deeply moving and startlingly profound, its arrival at this particular point in time is something of a small miracle. I cannot possibly recommend this enough. "
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 9,
+        "fields": {
+            "watched": "❌ ",
+            "title": "Thor: Love and Thunder",
+            "rating": 3,
+            "release_date": "July 6, 2022",
+            "review": " -  (haven't watched)"
+        }
+    },
+
+    {
+        "model": "mywatchlist.watchlistItems",
+        "pk": 10,
+        "fields": {
+            "watched": "❌ ",
+            "title": "Minion: Rise of Gru",
+            "rating": 3,
+            "release_date": "June 28, 2022",
+            "review": " - (haven't watched) "
+        }
+    }
+]
