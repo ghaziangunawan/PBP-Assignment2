@@ -35,7 +35,7 @@ We use virtual environments to have a lightweight and isolated environment for p
 /xml  = https://pbd-katalog.herokuapp.com/mywatchlist/xml/ <br>
 /json = https://pbd-katalog.herokuapp.com/mywatchlist/json/
 
-**1. Explain the difference between JSON, XML, and HTML!**<br>
+**- Explain the difference between JSON, XML, and HTML!**<br>
 
 **HTML**<br> HTML which stands for Hyper Text Markup Language is the standard markup language for building web pages/ web applications. HTML describes the structure of web pages and gives the browser the information how to display the content for the web page. HTML consists of series of elements where that elements label the parts of the contents <br>
 
@@ -44,10 +44,10 @@ We use virtual environments to have a lightweight and isolated environment for p
 **JSON**<br> 
 JavaScript Object Notation or JSON is commonly used for data storage and transfer, in JSON, it is similiar with HTML but it serves different purpose where HTML serves for making the structures of web pages while JSON is for storing and transfering data where everything is represented as an object consisting of attribute–value pairs and arrays in JSON.
 
-**2. Explain why we need the data delivery in implementing a platform!**<br>
+**- Explain why we need the data delivery in implementing a platform!**<br>
 Data delivery is crucial when implementing a platform. It is an essential way for sending, fetching, and storing datas for that platforms that is needed for that applications to operate correctly such as displaying some tables, texts, graphics, etc.
 
-**3. Explain how you can implement the checklists above**<br>
+**- Explain how you can implement the checklists above**<br>
 1. Creating and configuring mywatchlist app and its models by running "python manage.py startapp mywatchlist in local repository", adding mywatchlist in the installed apps in settings.py, adding the models in models.py, and migrating it <br>
 2. making folder fixtures and adding "initial_watchlist_data.json" and its data content of 10 datas <br>
 3. configuring views.py by adding the necessary functions <br>
