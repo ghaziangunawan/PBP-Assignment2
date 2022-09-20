@@ -54,8 +54,12 @@ Data delivery is crucial when implementing a platform. It is an essential way fo
 4. Creating folder templates and adding watchlist.html and its content along with configuring some css styles<br>
 5. Making routings by creating urls.py for the views function and adding path to urls.py located in project_django folder
 
+<img width="1060" alt="Screen Shot 2022-09-20 at 21 29 23" src="https://user-images.githubusercontent.com/112075463/191285670-0f5d252a-06fc-4f58-89dc-34731993381a.png"> <br>
+
+<img width="1060" alt="Screen Shot 2022-09-20 at 21 29 33" src="https://user-images.githubusercontent.com/112075463/191285950-f88aabbf-de5e-4edf-9c07-ea6550bb32e3.png"><br>
 
 
+<img width="1060" alt="Screen Shot 2022-09-20 at 21 29 42" src="https://user-images.githubusercontent.com/112075463/191286136-e4c4b83f-d1a0-4ec1-896b-5d5b4f241135.png"><br>
 
 
 
