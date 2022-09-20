@@ -1,4 +1,6 @@
-# Platform-Based Development Assignment 2
+# Platform-Based Development Assignments
+
+# Assignment 2
 
 ### Heroku Hyperlink : https://pbd-katalog.herokuapp.com/katalog/
 
@@ -26,6 +28,8 @@ We use virtual environments to have a lightweight and isolated environment for p
 5. push changes to github 
 6. create new heroku application and copy-paste the HEROKU_API_KEY and HEROKU_APP_NAME to the repository secret
 7. rerun the failed workflow and the application will be deployed in heroku
+
+# Assignment 3
 
 
 
