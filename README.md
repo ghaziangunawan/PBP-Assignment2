@@ -44,7 +44,12 @@ We use virtual environments to have a lightweight and isolated environment for p
 **JSON**<br> 
 JavaScript Object Notation or JSON is commonly used for data storage and transfer, in JSON, it is similiar with HTML but it serves different purpose where HTML serves for making the structures of web pages while JSON is for storing and transfering data where everything is represented as an object consisting of attribute–value pairs and arrays in JSON.
 
-**2. Explain why we need the data delivery in implementing a platform.!**<br>
+**2. Explain why we need the data delivery in implementing a platform!**<br>
+Data delivery is crucial when implementing a platform. It is an essential way for sending, fetching, and storing datas for that platforms that is needed for that applications to operate correctly such as displaying some tables, texts, graphics, etc.
+
+**3. Explain why we need the data delivery in implementing a platform!**<br>
+
+
 
 
 
