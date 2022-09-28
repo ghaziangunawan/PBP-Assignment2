@@ -1,13 +1,12 @@
 
 # Assignment 4
-### Heroku Hyperlink : https://pbd-katalog.herokuapp.com/todolist/ <br>
-
-**- What does {% csrf_token %} do in the <form> element? What happens if there is no such "code snippet" in the <form> element?**<br>
+### Heroku Hyperlink : https://pbd-katalog.herokuapp.com/todolist/<br>
+**- What does {% csrf_token %} do in the form element? What happens if there is no such "code snippet" in the form element?**<br>
 CSRF (cross-site request forgery) token is token that is unique to every user session which is used to prevent a CSRF attack, an attack where the attacker 'hijacks' the user session when the user clicks on a malicious links and submits a form on the malicious links then the ongoing site session is used by the malicious link. To create this token, Django will use the get_token() function in the ../Middleware/csrf.py file to encode the real csrf token so that it cannot be seen by other websites. without this csrf token django will throw a 403 client error "csrf verification failed" because it is enabled by default in the settings.py which means if we use an unsafe methode such as POST,PUT, and delete csrf token must be used as without csrf token there will be no security against CSRF attack
 
 
-**- Can we create the <form> element manually (without using a generator like {{ form.as_table }})? Explain generally how to create <form> manually.**<br>
-Yes we can create <form> element manually. To do this we need to add form tag with method such as POST and GET and the csrf token tag and then we can create the inputs and buttons. After that we need to configure the views.py file using request.<form method>.get("input name")
+**- Can we create the form element manually (without using a generator like form.as_table ? Explain generally how to create form manually.**<br>
+Yes we can create form element manually. To do this we need to add form tag with method such as POST and GET and the csrf token tag and then we can create the inputs and buttons. After that we need to configure the views.py file using request."form-method".get("input name")
 
 
 **- Describe the data flow process from the submission made by the user through the HTML form, data storage in the database, until the appearance of the data that has been stored in the HTML template.**<br>
