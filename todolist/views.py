@@ -55,16 +55,7 @@ def logout_user(request):
 def new_task(request):
     if request.method == 'POST':
         response = HttpResponseRedirect(reverse('todolist:show_todolist'))
-        Task.objects.create(user = request.user,title = request.POST.get('title'),description = request.POST.get('description'),
-        date = datetime.datetime.now(),
-        )
+        Task.objects.create(user = request.user,date = datetime.datetime.now(),title = request.POST.get('title'),description = request.POST.get('description'),)
         return response
-    return render(request, 'new_task.html')
-    
-        
-
-        
-        
-
-
-
+    context = {}
+    return render(request, 'new_task.html',context)
