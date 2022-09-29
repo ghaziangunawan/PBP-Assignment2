@@ -1,34 +1,84 @@
 {% extends 'base.html' %}
 
- {% block content %}
+{% block content %}
+    <style>
+    .styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    margin-left:auto; 
+    margin-right:auto;
+    
 
-  <h1>Assignment 4 PBP/PBD</h1>
+}
+    .styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
 
-  <h5>Welcome {{username}} </h5>
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
 
-  <table>
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+h1,h2,th,td{
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+    
+
+     </style>
+  <h1>PBP Assignment 4</h1>
+
+    <h2>Welcome {{username}} </h2>
+  <table class="styled-table">
     <tr>
-        <th>Date</th>
-        <th>Title</th>
-        <th>Description</th>
-
+      <th>Date</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Action</th>
     </tr>
     {% comment %} Add the data below this line {% endcomment %}
     {% comment %} Add data below {% endcomment %}
     {% for item in list_item %}
-        <tr>
-            <th>{{item.date}}</th>
-            <th>{{item.title}}</th>
-            <th>{{item.description}}</th>
-        </tr>
-    {% endfor %}
+    <tr>
+        <th>{{item.date}}</th>
+        <th>{{item.title}}</th>
+        <th>{{item.description}}</th>
+        <td>{% if item.is_finished %}
+            ✅ 
+            {% else %} 
+            ❌
+            {% endif %}</td>
+        <th>
+            <button><a href="{% url 'todolist:set_status' item.id %}">set status</a></button>
+            <button><a href="{% url 'todolist:set_remove' item.id %}">Remove Task</a></button>
+        </th>
+        {% endfor %}
+      </tr>
   </table>
+<br>
+<button><a href="{% url 'todolist:new_task' %}">Add Task</a></button>
+<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
 
-
-
-
-  <button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-  <button><a href="{% url 'todolist:new_task' %}">Create new task</a></button>
-
-
-  {% endblock content %}
+{% endblock content %}

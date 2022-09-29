@@ -8,4 +8,6 @@ class Task(models.Model):
     date = models.TextField()
     title = models.TextField()
     description = models.TextField()
+    is_finished = models.BooleanField(default=False)
+    status = models.TextField
 

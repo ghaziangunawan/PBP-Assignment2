@@ -1,8 +1,10 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.core import serializers
+from todolist.models import Task
 from django.shortcuts import redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
-from django.shortcuts import render
-from todolist.models import Task
 from django.contrib.auth import authenticate, login
 from django.contrib.auth import logout
 from django.contrib.auth.decorators import login_required
@@ -10,7 +12,20 @@ import datetime
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
-# TODO: Create your views here.
+@login_required(login_url="/todolist/login/")
+def set_status(request, id):
+    item = Task.objects.get(user=request.user, id=id)
+    item.is_finished = not item.is_finished
+    item.save(update_fields=["is_finished"])
+    return HttpResponseRedirect(reverse("todolist:show_todolist"))
+
+
+@login_required(login_url="/todolist/login/")
+def set_remove(request, id):
+    item = Task.objects.get(user=request.user, id=id)
+    item.delete()
+    return HttpResponseRedirect(reverse("todolist:show_todolist"))
+
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     data_todolist_item = Task.objects.filter(user=request.user)
@@ -55,7 +70,8 @@ def logout_user(request):
 def new_task(request):
     if request.method == 'POST':
         response = HttpResponseRedirect(reverse('todolist:show_todolist'))
-        Task.objects.create(user = request.user,date = datetime.datetime.now(),title = request.POST.get('title'),description = request.POST.get('description'),)
+        Task.objects.create(user = request.user,date = datetime.datetime.today(),title = request.POST.get('title'),description = request.POST.get('description'),)
         return response
     context = {}
     return render(request, 'new_task.html',context)
+
