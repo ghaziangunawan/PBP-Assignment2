@@ -5,29 +5,93 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    .navbar-text{
+      color:#ffffff;
+      font-weight:bold;
+      font-size:150%
+    }
+    th,td{
+      color:#ffffff
+    }
+    .navbar-custom {
+      background-color: #373C3F ;
+    }
+    .nav-link{
+      color: #fff
+    }
+    h1{
+        text-align:center;
+        color:white;
+    }
+    .global-container{
+        height: 100%;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        color: #ffffff;
+    }
+    .card-title{
+        color: #ffffff
+    }
+    .login-form{
+        width: 500px;
+        height:800;
+        padding: 20px;
+        background-color: #2F3438 ; 
+        border-radius:10px;
+    }
+    </style>
 
-<div class = "login">
-    <h1>Registration Form</h1>
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark navbar-brand-center py-3">
+    <div class="container-fluid">
+        <a class="navbar-brand mb-0 h1 " href="#"><img src="https://www.iconsdb.com/icons/preview/white/checkmark-xxl.png" width="50" height="50"></a>
+    </div>
+</nav>
 
-        <form method="POST" >
-            {% csrf_token %}
-            <table>
-                {{ form.as_table }}
-                <tr>
-                    <td></td>
-                    <td><input type="submit" name="submit" value="Register"/></td>
-                </tr>
-            </table>
-        </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-                {% endfor %}
-        </ul>
-    {% endif %}
-
+<body style="background-image: url(https://wallpaperaccess.com/full/7237875.png) ">
+    <div class="global-container mt-5 ">
+        <div class="card login-form">
+            <div class="card-body">
+                <h1 class="card-title text-center">
+                    Registration
+                </h1>
+                <div class="card-text">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="container">
+                            <div class="row mt-5 mb-2">
+                                    <tr>
+                                        <form method="POST" >
+                                            {% csrf_token %}
+                                            <table>
+                                                {{ form.as_table }}
+                                                <tr>
+                                                    <td></td>
+                                                    <td><input type="submit" name="submit" value="Register"/></td>
+                                                </tr>
+                                            </table>
+                                        </form>
+                                    </tr>
+                                </div>   
+     
+                                <div class="row">
+                                    <tr>
+                                    {% if messages %}
+                                        <ul>
+                                            {% for message in messages %}
+                                                <li>{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    </tr>
+                                </div>
+                        </div>
+                    </form>
+                </body>
+                </div>
+            </div>
+        </div>
 </div>
 
 {% endblock content %}

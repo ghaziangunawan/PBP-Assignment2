@@ -5,41 +5,98 @@
 {% endblock meta %}
 
 {% block content %}
+<style>
+    .navbar-text{
+      color:#ffffff;
+      font-weight:bold;
+      font-size:150%
+    }
+    th,td{
+      color:#ffffff
+    }
+    .navbar-custom {
+      background-color: #373C3F ;
+    }
+    .nav-link{
+      color: #fff
+    }
+    h1{
+        text-align:center;
+        color:white;
+    }
+    .global-container{
+        height: 100%;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        color: #ffffff;
+    }
+    .card-title{
+        color: #ffffff
+    }
+    .login-form{
+        width: 380px;
+        height:450px;
+        padding: 20px;
+        background-color: #2F3438 ; 
+        border-radius:10px;
+    }
+    </style>
 
-<div class = "login">
+<nav class="navbar  navbar-expand-lg navbar-dark bg-dark navbar-brand-center py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1 " href="#"><img src="https://www.iconsdb.com/icons/preview/white/checkmark-xxl.png" width="50" height="50"></a>
+      </div>
+  </nav>
 
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}
-
-    Don't have an account? <a href="{% url 'todolist:register' %}">Create Account</a>
-
+<body style="background-image: url(https://wallpaperaccess.com/full/7237875.png) ">
+    <div class="global-container mt-5 ">
+        <div class="card login-form">
+            <div class="card-body">
+                <h1 class="card-title text-center">
+                    Login
+                </h1>
+                <div class="card-text">
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="container">
+                            <div class="row mt-5 mb-2">
+                                    <tr>
+                                        <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                                    </tr>
+                                </div>   
+                                <div class="row mb-5">
+                                    <tr>
+                                        <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                                    </tr>
+                                </div>
+                                <div class="row mb-3">
+                                    <tr>
+                                        <td><button type="submit" class="btn btn-primary">Submit</button></td>
+                                    </tr>
+                                </div>
+                                <div class="row">
+                                    <tr>
+                                        <br><td>Don't have an account?</td> <br><a href="{% url 'todolist:register' %}">Create Account</a>
+                                    </tr> 
+                                </div>
+                                <div class="row">
+                                    <tr>
+                                    {% if messages %}
+                                        <ul>
+                                            {% for message in messages %}
+                                                <li>{{ message }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% endif %}
+                                    </tr>
+                                </div>
+                        </div>
+                    </form>
+                </body>
+                </div>
+            </div>
+        </div>
 </div>
 
 {% endblock content %}

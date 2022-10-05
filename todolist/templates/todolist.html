@@ -1,84 +1,72 @@
 {% extends 'base.html' %}
-
 {% block content %}
-    <style>
-    .styled-table {
-    border-collapse: collapse;
-    margin: 25px 0;
-    font-size: 0.9em;
-    font-family: sans-serif;
-    min-width: 400px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    margin-left:auto; 
-    margin-right:auto;
-    
 
-}
-    .styled-table thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-}
-.styled-table th,
-.styled-table td {
-    padding: 12px 15px;
-}
-.styled-table tbody tr {
-    border-bottom: 1px solid #dddddd;
-}
+<style>
+  .navbar-text{
+    color:#ffffff;
+    font-weight:bold;
+    font-size:150%
+  }
+  th,td{
+    color:#ffffff
+  }
+  .navbar-custom {
+    background-color: #373C3F ;
+  }
+  .nav-link{
+    color: #fff
+  }
+</style>
+  <nav class="navbar  navbar-expand-lg navbar-custom py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand mb-0 h1" href="{% url 'todolist:show_todolist' %}"><img src="https://www.iconsdb.com/icons/preview/white/checkmark-xxl.png" width="50" height="50"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" me-auto mb-2 mb-lg-0 >
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'todolist:register' %}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'todolist:logout' %}">Logout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'todolist:new_task' %}">Add Task</a>
+          </li>
+        </ul>
+      </div>
+      <span class="navbar-text">
+        Hello {{username}} 👋
+      </span>
+    </div>
+  </nav>
 
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
-}
 
-.styled-table tbody tr:last-of-type {
-    border-bottom: 2px solid #009879;
-}
-.styled-table tbody tr.active-row {
-    font-weight: bold;
-    color: #009879;
-}
-h1,h2,th,td{
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-
-    
-
-     </style>
-  <h1>PBP Assignment 4</h1>
-
-    <h2>Welcome {{username}} </h2>
-  <table class="styled-table">
-    <tr>
-      <th>Date</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Status</th>
-      <th>Action</th>
-    </tr>
-    {% comment %} Add the data below this line {% endcomment %}
-    {% comment %} Add data below {% endcomment %}
+<body style="background-color:#2F3438 ">
     {% for item in list_item %}
     <tr>
-        <th>{{item.date}}</th>
-        <th>{{item.title}}</th>
-        <th>{{item.description}}</th>
-        <td>{% if item.is_finished %}
-            ✅ 
-            {% else %} 
-            ❌
-            {% endif %}</td>
-        <th>
-            <button><a href="{% url 'todolist:set_status' item.id %}">set status</a></button>
-            <button><a href="{% url 'todolist:set_remove' item.id %}">Remove Task</a></button>
+      <div class="card mb-2 mt-5" >
+        <div class="card-header">
+          <th>{{item.title}}</th>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{item.date}}</h5>
+          <p class="card-text">{{item.description}}</p>
+          <p class="card-text">
+            <td>{% if item.is_finished %}
+              Finished
+              {% else %} 
+              Not Finished
+              {% endif %}
+            </td>
+          </p>
+          <button><a href="{% url 'todolist:set_status' item.id %}">set status</a></button> <button><a href="{% url 'todolist:set_remove' item.id %}">Remove Task</a></button>
+        </div>
+      </div>
+            
         </th>
         {% endfor %}
       </tr>
-  </table>
-<br>
-<button><a href="{% url 'todolist:new_task' %}">Add Task</a></button>
-<button><a href="{% url 'todolist:logout' %}">Logout</a></button>
-
+</body>
 {% endblock content %}

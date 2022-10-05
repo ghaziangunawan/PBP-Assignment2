@@ -29,13 +29,11 @@ def set_remove(request, id):
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     data_todolist_item = Task.objects.filter(user=request.user)
-    context = {"list_item": data_todolist_item, "username": request.user}
-    
+    context = {"list_item": data_todolist_item, "username": str(request.user).upper()}   
     return render(request, 'todolist.html',context)
 
 def register(request):
     form = UserCreationForm()
-
     if request.method == "POST":
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -70,8 +68,8 @@ def logout_user(request):
 def new_task(request):
     if request.method == 'POST':
         response = HttpResponseRedirect(reverse('todolist:show_todolist'))
-        Task.objects.create(user = request.user,date = datetime.datetime.today(),title = request.POST.get('title'),description = request.POST.get('description'),)
+        Task.objects.create(user = request.user,date = datetime.datetime.now(),title = request.POST.get('title'),description = request.POST.get('description'),)
         return response
-    context = {}
+    context = {"username": str(request.user).upper()}
     return render(request, 'new_task.html',context)
 
