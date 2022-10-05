@@ -16,8 +16,12 @@
   .nav-link{
     color: #fff
   }
+  .card-header,.card-title,.card-text{
+    color: #ffffff
+  }
 </style>
-  <nav class="navbar  navbar-expand-lg navbar-custom py-3">
+
+<nav class="navbar  navbar-expand-lg navbar-custom py-3">
     <div class="container-fluid">
       <a class="navbar-brand mb-0 h1" href="{% url 'todolist:show_todolist' %}"><img src="https://www.iconsdb.com/icons/preview/white/checkmark-xxl.png" width="50" height="50"></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
@@ -46,22 +50,20 @@
 <body style="background-color:#2F3438 ">
     {% for item in list_item %}
     <tr>
-      <div class="card mb-2 mt-5" >
+      <div class="card bg-secondary mb-2 mt-5" >
         <div class="card-header">
-          <th>{{item.title}}</th>
+          <th>{{item.title}}{% if item.is_finished %}
+            ✅
+            {% else %} 
+            ❌
+            {% endif %}
+          </th>
         </div>
         <div class="card-body">
           <h5 class="card-title">{{item.date}}</h5>
           <p class="card-text">{{item.description}}</p>
-          <p class="card-text">
-            <td>{% if item.is_finished %}
-              Finished
-              {% else %} 
-              Not Finished
-              {% endif %}
-            </td>
-          </p>
-          <button><a href="{% url 'todolist:set_status' item.id %}">set status</a></button> <button><a href="{% url 'todolist:set_remove' item.id %}">Remove Task</a></button>
+          <button type="button" class="btn btn-primary"><a href="{% url 'todolist:set_status' item.id %}"style="color:#ffffff; text-decoration: none;">set status</a></button>
+          <button type="button" class="btn btn-warning"><a href="{% url 'todolist:set_remove' item.id %}"style="color:#ffffff; text-decoration: none;">Remove Task</a></button>
         </div>
       </div>
             
