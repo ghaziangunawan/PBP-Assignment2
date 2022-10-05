@@ -39,7 +39,9 @@ Disadvantage = Not really useful for add unique style to each html element in di
 
 4. creating the create-task page by adding new_task function in views.py, routing in urls.py and the new_task.html file in template folder<br>
 
-5. Modifying responsiveness using media query
+5. Modifying responsiveness using media query then i do not need to add media query
+
+7. Creating bonus using card:hover 
 
 6. add, commit, and push to github and github will automatically deploy the changes in the repository
   
