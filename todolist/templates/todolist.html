@@ -19,6 +19,12 @@
   .card-header,.card-title,.card-text{
     color: #ffffff
   }
+  .card:hover{
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+
 </style>
 
 <nav class="navbar  navbar-expand-lg navbar-custom py-3">
@@ -50,7 +56,7 @@
 <body style="background-color:#2F3438 ">
     {% for item in list_item %}
     <tr>
-      <div class="card bg-secondary mb-2 mt-5" >
+      <div class="card bg-secondary hover-shadow mb-2 mt-5" >
         <div class="card-header">
           <th>{{item.title}}{% if item.is_finished %}
             ✅
