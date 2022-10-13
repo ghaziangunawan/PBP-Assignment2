@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.core import serializers
 from todolist.models import Task
 from django.shortcuts import redirect
@@ -29,8 +29,14 @@ def set_remove(request, id):
 @login_required(login_url='/todolist/login/')
 def show_todolist(request):
     data_todolist_item = Task.objects.filter(user=request.user)
-    context = {"list_item": data_todolist_item, "username": str(request.user).upper()}   
+    context = {"list_item": data_todolist_item, "username": str(request.user).upper(),"user_id" : request.user.id}   
     return render(request, 'todolist.html',context)
+
+@login_required(login_url='/todolist/login/')
+def show_todolist_ajax(request):
+    data_todolist_item = Task.objects.filter(user=request.user)
+    context = {"list_item": data_todolist_item, "username": str(request.user).upper(),"user_id" : request.user.id}   
+    return render(request, 'todolist_ajax.html',context)
 
 def register(request):
     form = UserCreationForm()
@@ -73,3 +79,16 @@ def new_task(request):
     context = {"username": str(request.user).upper()}
     return render(request, 'new_task.html',context)
 
+@login_required(login_url="/todolist/login/")
+def show_json(request):
+    data = Task.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json", data), content_type="application/json")
+
+@login_required(login_url='/todolist/login/')
+def new_task_ajax(request):
+    if request.method == "POST":
+        response =  JsonResponse({"instance": "Task Created"},status=200)
+        new_task = Task.objects.create(user = request.user,date = datetime.datetime.now(),title = request.POST.get('title'),description = request.POST.get('description'),)
+        new_task.save()
+        return response
+    
